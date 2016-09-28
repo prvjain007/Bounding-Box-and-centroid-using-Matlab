@@ -1,0 +1,17 @@
+close all
+clear all
+clc
+a=imread('C:\Users\parve\Downloads\1.png');
+subplot(2,2,1);
+imshow(a);
+red=a(:,:,1);
+subplot(2,2,2);
+imshow(red);
+r1=red<254&red>200;
+subplot(2,2,3);
+imshow(r1);
+% r2=medfilt2(r1,[10 10]);
+% r3=bwareaopen(r2,100);
+r3=imfill(r1,'holes');
+subplot(2,2,4)
+imshow(r3);
